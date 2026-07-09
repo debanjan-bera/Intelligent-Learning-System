@@ -57,9 +57,13 @@ class QuizAttemptService {
       questions,
       answers: [],
       timeTaken: timeTaken ?? 0,
-      difficulty,
+      difficulty: difficulty as "easy" | "medium" | "hard",
       score: 0
     });
+
+    if (!attempt) {
+      throw new Error("Failed to create quiz attempt");
+    }
 
     const safeQuestions = questions.map((question) => ({
       question: question.question,
