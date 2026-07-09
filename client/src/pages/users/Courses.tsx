@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { CourseCard } from "@/components/courses/CourseCard";
 import { useCourseContext } from "@/context/CourseContext";

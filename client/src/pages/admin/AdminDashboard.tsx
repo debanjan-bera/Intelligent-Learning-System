@@ -1,4 +1,4 @@
-import { Users, FileText, BookOpen, Award, TrendingUp, BarChart2, GraduationCap, Target } from "lucide-react";
+import { Users, FileText, BookOpen, Award, TrendingUp, BarChart2 } from "lucide-react";
 import { AdminLayout } from "@/components/layout/AdminLayout";
 import { StatCard } from "@/components/ui/stat-card";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";

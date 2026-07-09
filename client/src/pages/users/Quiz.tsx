@@ -34,7 +34,8 @@ export default function QuizPage() {
                 courseName: course?.title ?? "Unknown Course",
                 score: quiz.score,
                 totalQuestions: quiz.questions.length,
-                difficulty: quiz.difficulty,
+                accuracy: quiz.questions.length > 0 ? (quiz.score / quiz.questions.length) * 100 : 0,
+
                 date: new Date().toISOString(),
                 timeTaken: `${Math.floor((quiz.totalTime - quiz.timeLeft) / 60)}m ${(quiz.totalTime - quiz.timeLeft) % 60}s`,
                 topics: [],

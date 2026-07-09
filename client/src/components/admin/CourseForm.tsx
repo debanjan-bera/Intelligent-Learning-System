@@ -19,11 +19,7 @@ interface CourseFormProps {
 const difficulties = ["beginner", "intermediate", "advanced"] as const;
 type Difficulty = (typeof difficulties)[number];
 
-const gradients = [
-    "from-orange-400 to-orange-600",
-    "from-amber-400 to-orange-500",
-    "from-red-400 to-orange-600",
-];
+
 
 export function CourseForm({ initial, onSave, onCancel, isEdit }: CourseFormProps) {
     const [form, setForm] = useState<CourseFormValues>({

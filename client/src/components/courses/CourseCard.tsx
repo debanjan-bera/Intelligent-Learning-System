@@ -7,10 +7,9 @@ import { useProgressContext } from "@/context/ProgressContext";
 
 interface CourseCardProps {
     course: Course;
-    onEnroll?: (id: string) => void;
 }
 
-export function CourseCard({ course, onEnroll }: CourseCardProps) {
+export function CourseCard({ course }: CourseCardProps) {
     const { courseProgress } = useProgressContext();
     const courseId = course._id || course.id || "";
 

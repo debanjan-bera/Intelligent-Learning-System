@@ -1,4 +1,6 @@
 import express, { Request, Response } from "express";
+import dotenv from "dotenv";
+dotenv.config();
 import { connectDB } from "./config/db";
 import authRoute from "./api/routes/auth.route";
 import courseRoute from "./api/routes/course.route";
@@ -9,12 +11,15 @@ import userRoute from "./api/routes/user.route";
 import cors from "cors"
 import progressRoute from "./api/routes/progress.route";
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 
 connectDB();
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    process.env.CLIENT_URL as string
+  ].filter(Boolean),
   credentials: true,
 }));
 app.use(express.json());
