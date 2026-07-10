@@ -19,7 +19,7 @@ class AuthService {
             email,
             name,
             password: passwordHash,
-            role: "admin"
+            role
         });
         await newUser.save();
         const accessToken = JWTSecurity.generateToken({
