@@ -15,14 +15,16 @@ const PORT = process.env.PORT || 5000;
 
 
 connectDB();
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://intelligent-learning-system.vercel.app/",
-    process.env.CLIENT_URL as string
-  ].filter(Boolean),
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: [
+      "https://intelligent-learning-system.vercel.app",
+      "http://localhost:5173"
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
