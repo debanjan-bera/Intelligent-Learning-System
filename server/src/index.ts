@@ -18,6 +18,7 @@ connectDB();
 app.use(cors({
   origin: [
     "http://localhost:5173",
+    "https://intelligent-learning-system.vercel.app/",
     process.env.CLIENT_URL as string
   ].filter(Boolean),
   credentials: true,
